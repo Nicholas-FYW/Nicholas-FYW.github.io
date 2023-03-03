@@ -4,9 +4,16 @@
         <link>https://Nicholas-FYW.github.io/</link>
         <description>渣渣的夏天的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>summer2zz@163.com (渣渣的夏天)</managingEditor>
-            <webMaster>summer2zz@163.com (渣渣的夏天)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 03 Mar 2023 22:05:22 &#43;0800</lastBuildDate>
+            <webMaster>summer2zz@163.com (渣渣的夏天)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 03 Mar 2023 22:47:04 &#43;0800</lastBuildDate>
             <atom:link href="https://Nicholas-FYW.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Article</title>
+    <link>https://Nicholas-FYW.github.io/article/</link>
+    <pubDate>Fri, 03 Mar 2023 22:47:04 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/article/</guid>
+    <description><![CDATA[<p>新建</p>]]></description>
+</item><item>
     <title>Test3</title>
     <link>https://Nicholas-FYW.github.io/test3/</link>
     <pubDate>Sat, 27 Mar 2021 22:10:38 &#43;0800</pubDate>
