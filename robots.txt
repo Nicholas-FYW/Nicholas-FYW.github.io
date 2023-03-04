@@ -61,8 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-<<<<<<< HEAD
-Sitemap: https://zz2summer.github.io/en/sitemap.xml
-=======
 Sitemap: https://Nicholas-FYW.github.io/en/sitemap.xml
->>>>>>> e634b9ecff371558df7ce4eef2560d3a3ad3a568
