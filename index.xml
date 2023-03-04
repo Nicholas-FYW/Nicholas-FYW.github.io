@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>渣渣的夏天</title>
+        <title>村里放牛的小孩</title>
         <link>https://Nicholas-FYW.github.io/</link>
-        <description>渣渣的夏天的博客</description>
+        <description>村里放牛的小孩的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>summer2zz@163.com (渣渣的夏天)</managingEditor>
             <webMaster>summer2zz@163.com (渣渣的夏天)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 03 Mar 2023 22:47:04 &#43;0800</lastBuildDate>
             <atom:link href="https://Nicholas-FYW.github.io/index.xml" rel="self" type="application/rss+xml" />
