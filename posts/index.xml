@@ -1,0 +1,134 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - 被智子锁死的地球人</title>
+        <link>https://Nicholas-FYW.github.io/posts/</link>
+        <description>所有文章 | 被智子锁死的地球人</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>654854482@qq.com (被智子锁死的地球人)</managingEditor>
+            <webMaster>654854482@qq.com (被智子锁死的地球人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 31 Jul 2023 10:31:38 &#43;0800</lastBuildDate><atom:link href="https://Nicholas-FYW.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>字符串的查找删除</title>
+    <link>https://Nicholas-FYW.github.io/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E5%88%A0%E9%99%A4/</link>
+    <pubDate>Mon, 31 Jul 2023 10:31:38 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E5%88%A0%E9%99%A4/</guid>
+    <description><![CDATA[<h4 id="题目描述">题目描述</h4>
+<p>给定一个短字符串（不含空格），再给定若干字符串，在这些字符串中删除所含有的短字符串。</p>
+<h4 id="输入">输入</h4>
+<p>输入只有1组数据。
+输入一个短字符串（不含空格），再输入若干字符串直到文件结束为止。</p>
+<h4 id="输出">输出</h4>
+<p>删除输入的短字符串(不区分大小写)并去掉空格,输出。</p>
+<h4 id="思路">思路</h4>
+<p>利用string的find，earse进行操作，使用string一行一行进行接收，然后再进行处理，要求不区分大小写进行删除处理，我们可以把输入的string和短字符串全都变成小写，然后再把string和短字符串进行对比，同时将string的值进行复制，对复制后的值进行和小写的值做同样的处理。</p>
+<p>首先先把string全部变成小写，然后再把string和短字符串进行对比，对string和复制后的字符串进行相同的处理，最后对string和复制后的字符串进行去掉空格的处理。</p>
+<p>find(字符串， 起始位)</p>
+<p>erase(起始位， 大小)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tolower</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="n">string</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">s1</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="c1">//  turn string to lowcase
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tolower</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="c1">//  del the short string
+</span><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">!=</span> <span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+            <span class="n">s2</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="c1">//  del spaces
+</span><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">!=</span> <span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="n">s2</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item><item>
+    <title>PictureTest</title>
+    <link>https://Nicholas-FYW.github.io/picturetest/</link>
+    <pubDate>Sat, 04 Mar 2023 14:48:37 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/picturetest/</guid>
+    <description><![CDATA[<p>test picture location</p>
+<p></p>]]></description>
+</item><item>
+    <title>Test1</title>
+    <link>https://Nicholas-FYW.github.io/test1/</link>
+    <pubDate>Sat, 27 Mar 2021 21:56:51 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/test1/</guid>
+    <description><![CDATA[<p>新建</p>]]></description>
+</item></channel>
+</rss>
