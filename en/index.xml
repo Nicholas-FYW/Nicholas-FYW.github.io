@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>被智子锁死的地球人</title>
+        <link>https://Nicholas-FYW.github.io/en/</link>
+        <description>About LoveIt Theme</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>654854482@qq.com (被智子锁死的地球人)</managingEditor>
+            <webMaster>654854482@qq.com (被智子锁死的地球人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+            <atom:link href="https://Nicholas-FYW.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>

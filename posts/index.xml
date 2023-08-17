@@ -1,0 +1,1072 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - 被智子锁死的地球人</title>
+        <link>https://Nicholas-FYW.github.io/posts/</link>
+        <description>所有文章 | 被智子锁死的地球人</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>654854482@qq.com (被智子锁死的地球人)</managingEditor>
+            <webMaster>654854482@qq.com (被智子锁死的地球人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 16 Aug 2023 16:46:38 &#43;0800</lastBuildDate><atom:link href="https://Nicholas-FYW.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>1015 德才论</title>
+    <link>https://Nicholas-FYW.github.io/1015-%E5%BE%B7%E6%89%8D%E8%AE%BA/</link>
+    <pubDate>Wed, 16 Aug 2023 16:46:38 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/1015-%E5%BE%B7%E6%89%8D%E8%AE%BA/</guid>
+    <description><![CDATA[<p>宋代史学家司马光在《资治通鉴》中有一段著名的“德才论”：“是故才德全尽谓之圣人，才德兼亡谓之愚人，德胜才谓之君子，才胜德谓之小人。凡取人之术，苟不得圣人，君子而与之，与其得小人，不若得愚人。”</p>
+<p>现给出一批考生的德才分数，请根据司马光的理论给出录取排名。</p>
+<h3 id="输入格式">输入格式：</h3>
+<p>输入第一行给出 3 个正整数，分别为：<em>N</em>（≤105），即考生总数；<em>L</em>（≥60），为录取最低分数线，即德分和才分均不低于 <em>L</em> 的考生才有资格被考虑录取；<em>H</em>（&lt;100），为优先录取线——德分和才分均不低于此线的被定义为“才德全尽”，此类考生按德才总分从高到低排序；才分不到但德分到优先录取线的一类考生属于“德胜才”，也按总分排序，但排在第一类考生之后；德才分均低于 <em>H</em>，但是德分不低于才分的考生属于“才德兼亡”但尚有“德胜才”者，按总分排序，但排在第二类考生之后；其他达到最低线 <em>L</em> 的考生也按总分排序，但排在第三类考生之后。</p>
+<p>随后 <em>N</em> 行，每行给出一位考生的信息，包括：<code>准考证号 德分 才分</code>，其中<code>准考证号</code>为 8 位整数，德才分为区间 [0, 100] 内的整数。数字间以空格分隔。</p>
+<h3 id="输出格式">输出格式：</h3>
+<p>输出第一行首先给出达到最低分数线的考生人数 <em>M</em>，随后 <em>M</em> 行，每行按照输入格式输出一位考生的信息，考生按输入中说明的规则从高到低排序。当某类考生中有多人总分相同时，按其德分降序排列；若德分也并列，则按准考证号的升序输出。</p>
+<h3 id="输入样例">输入样例：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">14 60 80
+10000001 64 90
+10000002 90 60
+10000011 85 80
+10000003 85 80
+10000004 80 85
+10000005 82 77
+10000006 83 76
+10000007 90 78
+10000008 75 79
+10000009 59 90
+10000010 88 45
+10000012 80 100
+10000013 90 99
+10000014 66 60
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="输出样例">输出样例：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">12
+10000013 90 99
+10000012 80 100
+10000003 85 80
+10000011 85 80
+10000004 80 85
+10000007 90 78
+10000006 83 76
+10000005 82 77
+10000002 90 60
+10000014 66 60
+10000008 75 79
+10000001 64 90
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="思路">思路</h3>
+<p>首先对第一种情况进行判断，当不满足时再对第二种情况进行判断</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//坏情况
+</span><span class="c1"></span><span class="kt">bool</span> <span class="nf">cmp</span><span class="p">(</span><span class="n">inf</span> <span class="n">a</span><span class="p">,</span> <span class="n">inf</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">flag</span> <span class="o">==</span> <span class="n">b</span><span class="p">.</span><span class="n">flag</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">sum1</span><span class="p">,</span> <span class="n">sum2</span><span class="p">;</span>
+        <span class="n">sum1</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">virtue</span> <span class="o">+</span> <span class="n">a</span><span class="p">.</span><span class="n">talent</span><span class="p">;</span>
+        <span class="n">sum2</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">virtue</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">virtue</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum1</span> <span class="o">==</span> <span class="n">sum2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">virtue</span> <span class="o">==</span> <span class="n">b</span><span class="p">.</span><span class="n">virtue</span><span class="p">)</span>  <span class="k">return</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">num</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">num</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">virtue</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">.</span><span class="n">virtue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">sum1</span> <span class="o">&gt;</span> <span class="n">sum2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">flag</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">.</span><span class="n">flag</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/*
+</span><span class="cm">    使用一个结构体来存储考生的信息，使用flag来存储考生的分类，
+</span><span class="cm">    当对学生进行排序的时候，首先判断按照分类进行排序，同一分类
+</span><span class="cm">    里面按照的是总分进行排序。
+</span><span class="cm">*/</span>
+
+<span class="k">struct</span> <span class="nc">inf</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">num</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">virtue</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">talent</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">flag</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">bool</span> <span class="nf">cmp</span><span class="p">(</span><span class="n">inf</span> <span class="n">a</span><span class="p">,</span> <span class="n">inf</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">sum1</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">virtue</span> <span class="o">+</span> <span class="n">a</span><span class="p">.</span><span class="n">talent</span><span class="p">,</span> <span class="n">sum2</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">virtue</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">talent</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">flag</span> <span class="o">!=</span> <span class="n">b</span><span class="p">.</span><span class="n">flag</span><span class="p">)</span>  <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">flag</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">.</span><span class="n">flag</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">sum1</span> <span class="o">!=</span> <span class="n">sum2</span><span class="p">)</span>  <span class="k">return</span> <span class="n">sum1</span> <span class="o">&gt;</span> <span class="n">sum2</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">virtue</span> <span class="o">!=</span> <span class="n">b</span><span class="p">.</span><span class="n">virtue</span><span class="p">)</span>  <span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">virtue</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">.</span><span class="n">virtue</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">strcmp</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">num</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">num</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">h</span><span class="p">;</span>
+    <span class="n">inf</span> <span class="o">*</span><span class="n">data</span> <span class="o">=</span> <span class="k">new</span> <span class="n">inf</span><span class="p">[</span><span class="mi">100005</span><span class="p">];</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">h</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%s%d%d&#34;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">num</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">virtue</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">talent</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">virtue</span> <span class="o">&lt;</span> <span class="n">l</span> <span class="o">||</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">talent</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">count</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">virtue</span> <span class="o">&gt;=</span> <span class="n">h</span> <span class="o">&amp;&amp;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">talent</span> <span class="o">&gt;=</span> <span class="n">h</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">virtue</span> <span class="o">&gt;=</span> <span class="n">h</span> <span class="o">&amp;&amp;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">talent</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">virtue</span> <span class="o">&lt;</span> <span class="n">h</span> <span class="o">&amp;&amp;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">talent</span> <span class="o">&lt;</span> <span class="n">h</span> <span class="o">&amp;&amp;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">virtue</span> <span class="o">&gt;=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">talent</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span> <span class="o">+</span> <span class="n">n</span><span class="p">,</span> <span class="n">cmp</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">count</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">flag</span><span class="p">)</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s %d %d&#34;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">num</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">virtue</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">talent</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">delete</span><span class="p">[]</span> <span class="n">data</span><span class="p">;</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item><item>
+    <title>问题 H 整数奇偶排序</title>
+    <link>https://Nicholas-FYW.github.io/%E9%97%AE%E9%A2%98h%E6%95%B4%E6%95%B0%E5%A5%87%E5%81%B6%E6%8E%92%E5%BA%8F/</link>
+    <pubDate>Thu, 10 Aug 2023 15:05:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/%E9%97%AE%E9%A2%98h%E6%95%B4%E6%95%B0%E5%A5%87%E5%81%B6%E6%8E%92%E5%BA%8F/</guid>
+    <description><![CDATA[题目描述 输入10个整数，彼此以空格分隔。重新排序以后输出(也按空格分隔)，要求: 1.先输出其中的奇数,并按从大到小排列； 2.然后输出其中的偶]]></description>
+</item><item>
+    <title>1082 Read Number in Chinese</title>
+    <link>https://Nicholas-FYW.github.io/1082-read-number-in-chinese/</link>
+    <pubDate>Mon, 07 Aug 2023 16:22:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/1082-read-number-in-chinese/</guid>
+    <description><![CDATA[<p>Given an integer with no more than 9 digits, you are supposed to read it in the traditional Chinese way. Output <code>Fu</code> first if it is negative. For example, -123456789 is read as <code>Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu</code>. Note: zero (<code>ling</code>) must be handled correctly according to the Chinese tradition. For example, 100800 is <code>yi Shi Wan ling ba Bai</code>.</p>
+<h3 id="input-specification">Input Specification:</h3>
+<p>Each input file contains one test case, which gives an integer with no more than 9 digits.</p>
+<h3 id="output-specification">Output Specification:</h3>
+<p>For each test case, print in a line the Chinese way of reading the number. The characters are separated by a space and there must be no extra space at the end of the line.</p>
+<h3 id="sample-input-1">Sample Input 1:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">-123456789
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="sample-output-1">Sample Output 1:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="sample-input-2">Sample Input 2:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">100800
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="sample-output-2">Sample Output 2:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yi Shi Wan ling ba Bai
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="思路">思路</h3>
+<p>分情况讨论：要做到不重不漏</p>
+<p>A&amp;&amp;B一共会出现四种情况</p>
+<p>A：T  B：T</p>
+<p>A：T  B：F</p>
+<p>A：F  B：T</p>
+<p>A：F  B：F</p>
+<p>使用两个数组分别去存储数字的汉字和单位</p>
+<p>为了保证按照格式输出首先输出最高位，然后再空格输出下一位</p>
+<p>输出接下来的数字时，当数字不为零时，输出它的数字和单位</p>
+<p>当数字为零时：数字所在单位代表的进制:如果数字所在单位的所有位不全为   零，输出进制</p>
+<p>零的输出:只要零后面还有零就需要输出零，连续的零只需要输出一个零</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/*
+</span><span class="cm">    分情况讨论：要做到不重不漏
+</span><span class="cm">    A&amp;&amp;B一共会出现四种情况
+</span><span class="cm">    A：T  B：T
+</span><span class="cm">    A：T  B：F
+</span><span class="cm">    A：F  B：T
+</span><span class="cm">    A：F  B：F
+</span><span class="cm">    使用两个数组分别去存储数字的汉字和单位
+</span><span class="cm">    为了保证按照格式输出首先输出最高位，然后再空格输出下一位
+</span><span class="cm">    输出接下来的数字时，当数字不为零时，输出它的数字和单位
+</span><span class="cm">    当数字为零时：数字所在单位代表的进制:如果数字所在单位的所有位不全为零，输出进制
+</span><span class="cm">    零的输出:只要零后面还有零就需要输出零，连续的零只需要输出一个零*/</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">arr1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">&#34;ling&#34;</span><span class="p">,</span> <span class="s">&#34;yi&#34;</span><span class="p">,</span> <span class="s">&#34;er&#34;</span><span class="p">,</span> <span class="s">&#34;san&#34;</span><span class="p">,</span> <span class="s">&#34;si&#34;</span><span class="p">,</span> <span class="s">&#34;wu&#34;</span><span class="p">,</span> <span class="s">&#34;liu&#34;</span><span class="p">,</span> <span class="s">&#34;qi&#34;</span><span class="p">,</span> <span class="s">&#34;ba&#34;</span><span class="p">,</span> <span class="s">&#34;jiu&#34;</span><span class="p">};</span>
+    <span class="n">string</span> <span class="n">arr2</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="s">&#34;Shi&#34;</span><span class="p">,</span> <span class="s">&#34;Bai&#34;</span><span class="p">,</span> <span class="s">&#34;Qian&#34;</span><span class="p">,</span> <span class="s">&#34;Wan&#34;</span><span class="p">,</span> <span class="s">&#34;Shi&#34;</span><span class="p">,</span> <span class="s">&#34;Bai&#34;</span><span class="p">,</span> <span class="s">&#34;Qian&#34;</span><span class="p">,</span> <span class="s">&#34;Yi&#34;</span><span class="p">};</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">)</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="n">n</span><span class="p">;</span>
+            <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">do</span>
+        <span class="p">{</span>
+            <span class="n">num</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Fu &#34;</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%s&#34;</span><span class="p">,</span> <span class="n">arr1</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]].</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>  <span class="n">printf</span><span class="p">(</span><span class="s">&#34; %s&#34;</span><span class="p">,</span> <span class="n">arr2</span><span class="p">[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">].</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="kt">int</span> <span class="n">flag1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">flag1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+                <span class="c1">//万进制的输出，描述不太准确：只要万进制的位不全为零，就要输出万
+</span><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>  <span class="n">printf</span><span class="p">(</span><span class="s">&#34; %s&#34;</span><span class="p">,</span> <span class="n">arr2</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">());</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">flag1</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&#34; ling&#34;</span><span class="p">);</span>
+                <span class="n">flag1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&#34; %s&#34;</span><span class="p">,</span> <span class="n">arr1</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]].</span><span class="n">c_str</span><span class="p">());</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>  <span class="n">printf</span><span class="p">(</span><span class="s">&#34; %s&#34;</span><span class="p">,</span> <span class="n">arr2</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item><item>
+    <title>1048 数字加密</title>
+    <link>https://Nicholas-FYW.github.io/1048-%E6%95%B0%E5%AD%97%E5%8A%A0%E5%AF%86/</link>
+    <pubDate>Mon, 07 Aug 2023 16:22:54 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/1048-%E6%95%B0%E5%AD%97%E5%8A%A0%E5%AF%86/</guid>
+    <description><![CDATA[<p><strong>1048 数字加密</strong></p>
+<p>本题要求实现一种数字加密方法。首先固定一个加密用正整数 A，对任一正整数 B，将其每 1 位数字与 A 的对应位置上的数字进行以下运算：对奇数位，对应位的数字相加后对 13 取余——这里用 J 代表 10、Q 代表 11、K 代表 12；对偶数位，用 B 的数字减去 A 的数字，若结果为负数，则再加 10。这里令个位为第 1 位。</p>
+<h3 id="输入格式">输入格式：</h3>
+<p>输入在一行中依次给出 A 和 B，均为不超过 100 位的正整数，其间以空格分隔。</p>
+<h3 id="输出格式">输出格式：</h3>
+<p>在一行中输出加密后的结果。</p>
+<h3 id="输入样例">输入样例：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">1234567 368782971
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="输出样例">输出样例：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">3695Q8118
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="思路">思路</h3>
+<p>将A、B进行reverse，然后再进行加密</p>
+<p>首先取A、B里面的长度较小值，然后进行对应位加密</p>
+<p>最后倒序输出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/*
+</span><span class="cm">    将A、B进行reverse，然后再进行加密
+</span><span class="cm">    首先取A、B里面的长度较小值，然后进行对应位加密
+</span><span class="cm">    最后倒序输出 */</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">arr</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;0&#39;</span><span class="p">,</span> <span class="sc">&#39;1&#39;</span><span class="p">,</span> <span class="sc">&#39;2&#39;</span><span class="p">,</span> <span class="sc">&#39;3&#39;</span><span class="p">,</span> <span class="sc">&#39;4&#39;</span><span class="p">,</span> <span class="sc">&#39;5&#39;</span><span class="p">,</span> <span class="sc">&#39;6&#39;</span><span class="p">,</span> <span class="sc">&#39;7&#39;</span><span class="p">,</span> <span class="sc">&#39;8&#39;</span><span class="p">,</span> <span class="sc">&#39;9&#39;</span><span class="p">,</span> <span class="sc">&#39;J&#39;</span><span class="p">,</span> <span class="sc">&#39;Q&#39;</span><span class="p">,</span> <span class="sc">&#39;K&#39;</span><span class="p">};</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">reverse</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">a</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="n">reverse</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">b</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+        <span class="kt">int</span> <span class="n">num</span><span class="p">[</span><span class="mi">1005</span><span class="p">];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">((</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">))</span> <span class="o">%</span> <span class="mi">13</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+                    <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">((</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">num</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="o">%</span> <span class="mi">13</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="n">num</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">-</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="n">num</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">10</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">len</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">((</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">num</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">)</span> <span class="o">%</span> <span class="mi">13</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="n">num</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%c&#34;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]]);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item><item>
+    <title>2</title>
+    <link>https://Nicholas-FYW.github.io/1077-kuchiguse/</link>
+    <pubDate>Sun, 06 Aug 2023 18:23:57 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/1077-kuchiguse/</guid>
+    <description><![CDATA[<p>The Japanese language is notorious for its sentence ending particles. Personal preference of such particles can be considered as a reflection of the speaker&rsquo;s personality. Such a preference is called &ldquo;Kuchiguse&rdquo; and is often exaggerated artistically in Anime and Manga. For example, the artificial sentence ending particle &ldquo;nyan~&rdquo; is often used as a stereotype for characters with a cat-like personality:</p>
+<ul>
+<li>Itai nyan~ (It hurts, nyan~)</li>
+<li>Ninjin wa iyada nyan~ (I hate carrots, nyan~)</li>
+</ul>
+<p>Now given a few lines spoken by the same character, can you find her Kuchiguse?</p>
+<h3 id="input-specification">Input Specification:</h3>
+<p>Each input file contains one test case. For each case, the first line is an integer <em>N</em> (2≤<em>N</em>≤100). Following are <em>N</em> file lines of 0~256 (inclusive) characters in length, each representing a character&rsquo;s spoken line. The spoken lines are case sensitive.</p>
+<h3 id="output-specification">Output Specification:</h3>
+<p>For each test case, print in one line the kuchiguse of the character, i.e., the longest common suffix of all <em>N</em> lines. If there is no such suffix, write <code>nai</code>.</p>
+<h3 id="sample-input-1">Sample Input 1:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">3
+Itai nyan~
+Ninjin wa iyadanyan~
+uhhh nyan~
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="sample-output-1">Sample Output 1:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">nyan~
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="sample-input-2">Sample Input 2:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">3
+Itai!
+Ninjinnwaiyada T_T
+T_T
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="sample-output-2">Sample Output 2:</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">nai
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="思路">思路</h3>
+<p>使用字符串进行输入的时候空格会结束输入</p>
+<p>寻找最长后缀匹配不太方便，我们可以对它进行变换</p>
+<p>转变为寻找最长前缀匹配</p>
+<p>首先，对所有的字符串进行reverse</p>
+<p>然后再将第一个字符串的每个单词和其他所有的字符串进行比较，</p>
+<p>发现出现不一样的单词就停止进行比对</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+/*
+    使用字符串进行输入的时候空格会结束输入
+    寻找最长后缀匹配不太方便，我们可以对它进行变换
+    转变为寻找最长前缀匹配
+    首先，对所有的字符串进行reverse
+    然后再将第一个字符串的每个单词和其他所有的字符串进行比较，
+    发现出现不一样的单词就停止进行比对
+     */
+
+int main()
+{
+    int n;
+    string sen[1005];
+    while (scanf(&#34;%d&#34;, &amp;n) != EOF)
+    {
+        getchar();
+        for (int i = 0; i &lt; n; i++)
+        {
+            getline(cin, sen[i]);
+            reverse(sen[i].begin(), sen[i].end());
+        }
+        int len = sen[0].size(), flag = 0, index = 0;
+        for (int i = 0; i &lt; len; i++)
+        {
+            char c = sen[0][i];
+            for (int j = 1; j &lt; n; j++)
+            {
+                if (sen[j][i] != c)
+                {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag)
+            {
+                index = i - 1;
+                break;
+            }
+        }
+        if (index &lt; 0)
+        {
+            printf(&#34;nai&#34;);
+        }
+        else
+        {
+            for (int i = index; i &gt;= 0; i--)
+            {
+                printf(&#34;%c&#34;, sen[0][i]);
+            }
+        }
+
+        printf(&#34;\n&#34;);
+    }
+    return 0;
+}
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item><item>
+    <title>1009 说反话</title>
+    <link>https://Nicholas-FYW.github.io/1009-%E8%AF%B4%E5%8F%8D%E8%AF%9D/</link>
+    <pubDate>Sat, 05 Aug 2023 10:23:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/1009-%E8%AF%B4%E5%8F%8D%E8%AF%9D/</guid>
+    <description><![CDATA[<p>给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。</p>
+<h3 id="输入格式">输入格式：</h3>
+<p>测试输入包含一个测试用例，在一行内给出总长度不超过 80 的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用 1 个空格分开，输入保证句子末尾没有多余的空格。</p>
+<h3 id="输出格式">输出格式：</h3>
+<p>每个测试用例的输出占一行，输出倒序后的句子。</p>
+<h3 id="输入样例">输入样例：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Hello World Here I Come
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="输出样例">输出样例：</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Come I Here World Hello
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="思路">思路</h3>
+<p>首先使用一个字符串来接受每个单词，然后再使用一个数组来接受所有的单词，随后把句子倒序输出。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/* 
+</span><span class="cm">    用一个字符串接受输入的每个单词
+</span><span class="cm">    然后使用一个字符串数组接受输入的每个单词 */</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10005</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">)</span>  <span class="n">arr</span><span class="p">[</span><span class="n">num</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">num</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item><item>
+    <title>字符串的查找删除</title>
+    <link>https://Nicholas-FYW.github.io/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E5%88%A0%E9%99%A4/</link>
+    <pubDate>Mon, 31 Jul 2023 10:31:38 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9F%A5%E6%89%BE%E5%88%A0%E9%99%A4/</guid>
+    <description><![CDATA[<h4 id="题目描述">题目描述</h4>
+<p>给定一个短字符串（不含空格），再给定若干字符串，在这些字符串中删除所含有的短字符串。</p>
+<h4 id="输入">输入</h4>
+<p>输入只有1组数据。
+输入一个短字符串（不含空格），再输入若干字符串直到文件结束为止。</p>
+<h4 id="输出">输出</h4>
+<p>删除输入的短字符串(不区分大小写)并去掉空格,输出。</p>
+<h4 id="思路">思路</h4>
+<p>利用string的find，earse进行操作，使用string一行一行进行接收，然后再进行处理，要求不区分大小写进行删除处理，我们可以把输入的string和短字符串全都变成小写，然后再把string和短字符串进行对比，同时将string的值进行复制，对复制后的值进行和小写的值做同样的处理。</p>
+<p>首先先把string全部变成小写，然后再把string和短字符串进行对比，对string和复制后的字符串进行相同的处理，最后对string和复制后的字符串进行去掉空格的处理。</p>
+<p>find(字符串， 起始位)</p>
+<p>erase(起始位， 大小)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">string</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tolower</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="n">string</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">s1</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="c1">//  turn string to lowcase
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tolower</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="c1">//  del the short string
+</span><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">!=</span> <span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+            <span class="n">s2</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="c1">//  del spaces
+</span><span class="c1"></span>        <span class="k">while</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">!=</span> <span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">s1</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="n">s2</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item><item>
+    <title>PictureTest</title>
+    <link>https://Nicholas-FYW.github.io/picturetest/</link>
+    <pubDate>Sat, 04 Mar 2023 14:48:37 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/picturetest/</guid>
+    <description><![CDATA[<p>test picture location</p>
+<p></p>]]></description>
+</item><item>
+    <title>Test1</title>
+    <link>https://Nicholas-FYW.github.io/test1/</link>
+    <pubDate>Sat, 27 Mar 2021 21:56:51 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://Nicholas-FYW.github.io/test1/</guid>
+    <description><![CDATA[<p>新建</p>]]></description>
+</item></channel>
+</rss>
